@@ -125,7 +125,19 @@ function gcd(a, b) {
     if (a === b)
     return a;
     while ((a % 2 === 0) && (b % 2 === 0)){
-
+        a = a/2
+        b = b/2
+        d = d + 1
+    }
+    while (( a % 2 === 0)) || (b % 2 === 0)){
+        if (a % 2 === 0)
+            return a = a/2
+        else if (b % 2 === 0)
+            return b = b/2
+        else if (a > b)
+            return a = (a - b)/2
+        else 
+            return b = (b - a)/2        
     }
     
 }
