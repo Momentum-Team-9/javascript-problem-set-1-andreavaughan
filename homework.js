@@ -1,21 +1,21 @@
 // 1. Set the variable `givenName` to the string "Addison".
 const givenName = "Addison"
 
-// 2. Set candies equal to 20, people to 6, and leftover equal
-// to the remainder of dividing 20 by 6.
+// // 2. Set candies equal to 20, people to 6, and leftover equal
+// // to the remainder of dividing 20 by 6.
 let candies = 20; 
 let people = 6; 
 let leftover = candies % people;
 
-// 3. Create a function called greeting that returns "Hello, <name>!",
-// where <name> is the name given as an argument to the function.
+// // 3. Create a function called greeting that returns "Hello, <name>!",
+// // where <name> is the name given as an argument to the function.
 function greeting(name){
     return "Hello, " + name + "!";
 }
 
-// 4. Create a function called isOdd that, given a number, will
-// return true if it is odd and false if it is not. An odd number is a
-// number which, when divided by 2, has a remainder of 1 or -1.
+// // 4. Create a function called isOdd that, given a number, will
+// // return true if it is odd and false if it is not. An odd number is a
+// // number which, when divided by 2, has a remainder of 1 or -1.
 function isOdd(num){
     if (num % 2 === 1 || num % 2 === -1)
     return true
@@ -23,9 +23,9 @@ function isOdd(num){
     return false
 }
 
-// 5. Create a function called isEven that, given a number, will
-// return true if it is even and false if it is not. An even number is a
-// number which, when divided by 2, has a remainder of 0.
+// // 5. Create a function called isEven that, given a number, will
+// // return true if it is even and false if it is not. An even number is a
+// // number which, when divided by 2, has a remainder of 0.
 function isEven(num){
     if (num % 2 === 0)
     return true
@@ -33,26 +33,26 @@ function isEven(num){
     return false
 }
 
-// 6. Create a function called fahrenheitToCelsius that takes a
-// Fahrenheit temperature as an argument and returns the
-// temperature in Celsius.
+// // 6. Create a function called fahrenheitToCelsius that takes a
+// // Fahrenheit temperature as an argument and returns the
+// // temperature in Celsius.
 function fahrenheitToCelsius(fahrenheit){
     return ((fahrenheit - 32) * (5 / 9))
 }
 
-// 7. Create a function called celsiusToFahrenheit that takes a
-// Celsius temperature as an argument and returns the
-// temperature in Fahrenheit.
+// // 7. Create a function called celsiusToFahrenheit that takes a
+// // Celsius temperature as an argument and returns the
+// // temperature in Fahrenheit.
 function celsiusToFahrenheit(celsius){
     return ((celsius * (9 / 5)) + 32)
 }
 
-// 8. Create a function called fahrenheitToKelvin that takes a
-// Fahrenheit temperature as an argument and returns the
-// temperature in Kelvin. This function must use your previous
-// fahrenheitToCelsius function.
-// Absolute zero (0 K) is equivalent to −273.15 C.
-// 1 degree Kelvin equals 1 degree Celsius.
+// // 8. Create a function called fahrenheitToKelvin that takes a
+// // Fahrenheit temperature as an argument and returns the
+// // temperature in Kelvin. This function must use your previous
+// // fahrenheitToCelsius function.
+// // Absolute zero (0 K) is equivalent to −273.15 C.
+// // 1 degree Kelvin equals 1 degree Celsius.
 function fahrenheitToKelvin(fahrenheit){
     if (fahrenheitToCelsius(fahrenheit) === 0)
     return 273.15;
@@ -60,9 +60,9 @@ function fahrenheitToKelvin(fahrenheit){
     return fahrenheitToCelsius(fahrenheit) + 273.15
 }
 
-// 9. Create a function called lesser that takes two numbers as
-// arguments and returns the lesser of them. This function should
-// use an if/else statement.
+// // 9. Create a function called lesser that takes two numbers as
+// // arguments and returns the lesser of them. This function should
+// // use an if/else statement.
 function lesser(num1, num2){
     if (num1 > num2)
     return num2;
@@ -72,17 +72,17 @@ function lesser(num1, num2){
     return "these numbers are equal"
 }
 
-// 10. Create a function called multigreeting that takes a name
-// and a language code and returns a version of "Hello, <name>!"
-// in the specified language. The supported languages and their
-// translations are below.
-//
-// en - Hello, <name>!
-// es - ¡Hola, <name>!
-// fr - Bonjour, <name>!
-// eo - Saluton, <name>!
-//
-// If any other language code is used, return nothing.
+// // 10. Create a function called multigreeting that takes a name
+// // and a language code and returns a version of "Hello, <name>!"
+// // in the specified language. The supported languages and their
+// // translations are below.
+// //
+// // en - Hello, <name>!
+// // es - ¡Hola, <name>!
+// // fr - Bonjour, <name>!
+// // eo - Saluton, <name>!
+// //
+// // If any other language code is used, return nothing.
 function multigreeting(name, language) {
     if (language === "en")
     return "Hello, " + name + "!"
@@ -121,23 +121,28 @@ function multigreeting(name, language) {
 
 // Write a function called gcd that takes two arguments and returns the greatest common
 // divisor using the instructions above.
-function gcd(a, b) {
-    if (a === b)
-    return a;
-    while ((a % 2 === 0) && (b % 2 === 0)){
-        a = a/2
-        b = b/2
-        d = d + 1
+function gcd(num1, num2){
+    let commonDivisor = 0
+    while (num1 % 2 === 0 && num2 % 2 === 0){
+        num1 = num1/2
+        num2 = num2/2
+        commonDivisor = commonDivisor + 1 
     }
-    while (( a % 2 === 0)) || (b % 2 === 0)){
-        if (a % 2 === 0)
-            return a = a/2
-        else if (b % 2 === 0)
-            return b = b/2
-        else if (a > b)
-            return a = (a - b)/2
-        else 
-            return b = (b - a)/2        
+    while (num1 != num2){
+        if (num1 % 2 === 0){
+            num1 = num1 / 2
+        } else if (num2 % 2 === 0){
+            num2 = num2 / 2
+        } else if (num1 > num2){
+            num1 = (num1 - num2) / 2
+        } else {
+            num2 = (num2 - num1) / 2
+        }
     }
-    
+    let g = num1
+            
+    return g * 2**commonDivisor
 }
+
+
+//could also write as commonDivisor++ in other circumstances where the common divisor isn't starting as 0
